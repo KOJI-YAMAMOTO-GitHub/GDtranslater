@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title>Google DeepL Traslater</title>
+
+    <style type="text/css">
+        body {
+            text-align: center;
+            font-family: "Nico Moji";
+            margin: 50vh auto 0;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+
+        #title {
+            font-size: 3vw;
+        }
+
+        #traslate {
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        #btn {
+            align-items: center;
+            margin: 25px auto;
+            border-radius: 50vh;
+            width: 200px;
+            background-color: #e6f1f8;
+        }
+
+        @media screen and (max-width: 980px) {
+            #title {
+                font-size: 8vw;
+            }
+
+            #main {
+                /* margin-top: 1000px; */
+                /* background-color: #000000; */
+            }
+
+            #traslate {
+                font-size: 5vw;
+            }
+
+            #btn {
+                font-size: 5vw;
+                border-radius: 50vh;
+                width: 350px;
+            }
+
+            #traslateresult {
+                font-size: 5vw;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body onkeypress="traslateenter(event.keyCode)">
+
+    <script>
+        function traslateenter(keycode) {
+            var traslateword = document.getElementById('traslate').value;
+            if (keycode == 13 && traslateword != "") {
+                traslate();
+            } else {
+
+            }
+        }
+
+        function translategd(keycode) {
+            var traslateword = document.getElementById('traslate').value;
+
+            if (traslateword != "") {
+                var element1 = document.getElementById('googleja');
+                element1.innerHTML = "<a id= \"googletraslate\" href=\"https://translate.google.co.jp/?hl=ja&sl=en&tl=ja&text=" + traslateword + "&op=translate\" target=\"_blank\">Google-> to JA</a>";
+
+                var element2 = document.getElementById('googleen');
+                element2.innerHTML = "<a id= \"twittertraslate\" href=\"https://translate.google.co.jp/?hl=ja&sl=ja&tl=en&text=" + traslateword + "&op=translate\" target=\"_blank\">Google-> to EN</a>";
+
+                var element3 = document.getElementById('deeeplja');
+                element3.innerHTML = "<a id= \"instagramtraslate\" href=\"https://www.deepl.com/ja/translator#en/ja/" + traslateword + "\" target=\"_blank\">Deeepl-> to JA</a>";
+
+                var element4 = document.getElementById('deeeplen');
+                element4.innerHTML = "<a id= \"youtubetraslate\" href=\"https://www.deepl.com/ja/translator#ja/en/" + traslateword + "\" target=\"_blank\">Deeepl-> to EN</a>";
+
+            }
+        }
+    </script>
+    <div id="main">
+        <p id="title">Google DeepL traslate</p>
+        <textarea rows="4" cols="40" type="traslate" name="traslate" id="traslate" placeholder="traslate Word" autofocus></textarea><br>
+        <p id="btn" onclick="translategd()">translate</p>
+    </div>
+
+    <div id="traslateresult">
+        <div id="googleja"></div><br>
+        <div id="googleen"></div><br>
+        <div id="deeeplja"></div><br>
+        <div id="deeeplen"></div><br>
+    </div>
+</body>
+
+</html>
