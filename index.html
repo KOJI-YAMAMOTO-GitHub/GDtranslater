@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <title>Google DeepL Traslater</title>
+    <title>Google DeepL Translater</title>
 
     <style type="text/css">
         body {
@@ -19,7 +19,7 @@
             font-size: 3vw;
         }
 
-        #traslate {
+        #translate {
             border-radius: 5px;
             text-align: center;
         }
@@ -42,7 +42,7 @@
                 /* background-color: #000000; */
             }
 
-            #traslate {
+            #translate {
                 font-size: 5vw;
             }
 
@@ -52,7 +52,7 @@
                 width: 350px;
             }
 
-            #traslateresult {
+            #translateresult {
                 font-size: 5vw;
             }
 
@@ -61,44 +61,44 @@
 
 </head>
 
-<body onkeypress="traslateenter(event.keyCode)">
+<body onkeypress="translateenter(event.keyCode)">
 
     <script>
-        function traslateenter(keycode) {
-            var traslateword = document.getElementById('traslate').value;
-            if (keycode == 13 && traslateword != "") {
-                traslate();
+        function translateenter(keycode) {
+            var translateword = document.getElementById('translate').value;
+            if (keycode == 13 && translateword != "") {
+                translate();
             } else {
 
             }
         }
 
         function translategd(keycode) {
-            var traslateword = document.getElementById('traslate').value;
+            var translateword = document.getElementById('translate').value;
 
-            if (traslateword != "") {
+            if (translateword != "") {
                 var element1 = document.getElementById('googleja');
-                element1.innerHTML = "<a id= \"googletraslate\" href=\"https://translate.google.co.jp/?hl=ja&sl=en&tl=ja&text=" + traslateword + "&op=translate\" target=\"_blank\">Google-> to JA</a>";
+                element1.innerHTML = "<a id= \"googletranslate\" href=\"https://translate.google.co.jp/?hl=ja&sl=en&tl=ja&text=" + translateword + "&op=translate\" target=\"_blank\">Google-> to JA</a>";
 
                 var element2 = document.getElementById('googleen');
-                element2.innerHTML = "<a id= \"twittertraslate\" href=\"https://translate.google.co.jp/?hl=ja&sl=ja&tl=en&text=" + traslateword + "&op=translate\" target=\"_blank\">Google-> to EN</a>";
+                element2.innerHTML = "<a id= \"twittertranslate\" href=\"https://translate.google.co.jp/?hl=ja&sl=ja&tl=en&text=" + translateword + "&op=translate\" target=\"_blank\">Google-> to EN</a>";
 
                 var element3 = document.getElementById('deeeplja');
-                element3.innerHTML = "<a id= \"instagramtraslate\" href=\"https://www.deepl.com/ja/translator#en/ja/" + traslateword + "\" target=\"_blank\">Deeepl-> to JA</a>";
+                element3.innerHTML = "<a id= \"instagramtranslate\" href=\"https://www.deepl.com/ja/translator#en/ja/" + translateword + "\" target=\"_blank\">Deeepl-> to JA</a>";
 
                 var element4 = document.getElementById('deeeplen');
-                element4.innerHTML = "<a id= \"youtubetraslate\" href=\"https://www.deepl.com/ja/translator#ja/en/" + traslateword + "\" target=\"_blank\">Deeepl-> to EN</a>";
+                element4.innerHTML = "<a id= \"youtubetranslate\" href=\"https://www.deepl.com/ja/translator#ja/en/" + translateword + "\" target=\"_blank\">Deeepl-> to EN</a>";
 
             }
         }
     </script>
     <div id="main">
-        <p id="title">Google DeepL traslate</p>
-        <textarea rows="4" cols="40" type="traslate" name="traslate" id="traslate" placeholder="traslate Word" autofocus></textarea><br>
+        <p id="title">Google DeepL translate</p>
+        <textarea rows="4" cols="40" type="translate" name="translate" id="translate" placeholder="translate Word" autofocus></textarea><br>
         <p id="btn" onclick="translategd()">translate</p>
     </div>
 
-    <div id="traslateresult">
+    <div id="translateresult">
         <div id="googleja"></div><br>
         <div id="googleen"></div><br>
         <div id="deeeplja"></div><br>
